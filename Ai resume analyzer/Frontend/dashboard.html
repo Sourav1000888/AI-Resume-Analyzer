@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - AI Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <h2>AI Resume Analyzer</h2>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="upload-section">
+        <h3>Upload Resume</h3>
+        <div class="file-upload-wrapper">
+            <input type="file" id="resume-file" accept=".pdf,.docx" onchange="updateFileName()" hidden />
+            <label for="resume-file" class="file-upload-label">
+                <span class="upload-icon">📄</span> Choose Resume
+            </label>
+            <span id="file-name-display">No file chosen</span>
+        </div>
+        <textarea id="job-desc" placeholder="Job Description (optional)"></textarea>
+        <button onclick="uploadResume()">Upload</button>
+        <p id="upload-msg"></p>
+    </div>
+
+
+
+    <div id="resume-list" class="resume-list"></div>
+
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-box">
+            <h3 id="modal-title"></h3>
+            <p><strong>Match Score:</strong> <span id="modal-score"></span>%</p>
+            <p><strong>Skills Found:</strong> <span id="modal-skills"></span></p>
+            <p><strong>Missing Skills:</strong> <span id="modal-missing"></span></p>
+            <p><strong>Strengths:</strong></p>
+            <ul id="modal-strengths"></ul>
+            <p><strong>Weaknesses:</strong></p>
+            <ul id="modal-weaknesses"></ul>
+            <p><strong>Suggestions:</strong> <span id="modal-suggestions"></span></p>
+
+            <div class="modal-actions">
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>loadResumes();</script>
+</body>
+
+</html>

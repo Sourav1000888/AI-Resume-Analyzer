@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Resume Analyzer - Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h2 id="form-title">Login</h2>
+
+    <input type="text" id="name" placeholder="Name" style="display:none" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button id="submit-btn" onclick="handleAuth()">Login</button>
+    <p id="error-msg" class="error"></p>
+
+    <p onclick="toggleMode()" class="toggle-link">
+      <span id="toggle-text">Don't have an account? Signup</span>
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
